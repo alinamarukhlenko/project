@@ -3,23 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Авторизация</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon"> 
+    <link rel="stylesheet" href="authorize.css"> 
 </head>
 <body>
 
+<div class="container">
+    <h2>Регистрация</h2>
     <form action="./register.php" method="post">
-        <input type="text" placeholder="login" name="login" required>
-        <input type="password" placeholder="password" name="password" required>
-        <input type="password" placeholder="repeat password" name="repeatpassword" required>
-        <input type="email" placeholder="email" name="email" required>
+        <div class="form-elements">
+            <input type="text" placeholder="ФИО" name="login" required>
+            <input type="email" placeholder="Электронная почта" name="email" required>
+        </div>
+        <div class="form-elements">
+            <input type="password" placeholder="Пароль" name="password" required>
+            <input type="password" placeholder="Повторить пароль" name="repeatpassword" required>
+        </div>
         <button type="submit">Зарегистрироваться</button>
     </form>
 
+    <h2>Авторизация</h2>
     <form action="./login.php" method="post">
-        <input type="text" placeholder="login" name="login" required>
-        <input type="password" placeholder="password" name="password" required>
+        <div class="form-elements">
+            <input type="text" placeholder="ФИО" name="login" required>
+            <input type="password" placeholder="Пароль" name="password" required>
+        </div>
         <button type="submit">Войти</button>
     </form>
+</div>
 
 </body>
 </html>

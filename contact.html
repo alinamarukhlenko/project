@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Образовательная Организация</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/95c8bfd2c3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="sub-header">
+      <nav>
+        <a href="index.html"><img src="img/logo.png" alt="logo" /></a>
+        <div class="nav-links" id="nav-links">
+          <i class="fa fa-solid fa-xmark" onclick="hideMenu()"></i>
+          <ul>
+           
+            <li><a href="./about.html">О нас</a></li>
+            <li><a href="./course.html">Мероприятия и события</a></li>
+            <li><a href="./blog.html">Меню</a></li>
+            <li><a href="./contact.html">Контактная информация</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-solid fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <h1>Контактная информация</h1>
+    </section>
+   
+
+    <section class="contact-us">
+      <div class="row">
+        <div class="contact-col">
+          <div>
+            <i class="fa fa-solid fa-home"></i>
+            <span
+              ><h5>Ленинградское шоссе, 13А</h5>
+              <p>Москва, Россия</p>
+            </span>
+          </div>
+          <div>
+            <i class="fa fa-solid fa-phone"></i>
+            <span><h5> +7(499)150-55-02</h5></span>
+            <p>С понедельника по субботу,с 09.00 до 18.00</p>
+          </div>
+          <div>
+            <i class="fa fa-solid fa-envelope"></i>
+            <span><h5>info@gmail.com</h5></span>
+            <p>Отправьте свой запрос по электронной почте</p>
+          </div>
+        </div>
+        <div class="contact-col">
+            <form action="">
+                <input type="text" placeholder="Введите свое имя" required>
+                <input type="text" placeholder="Введите адрес электронной почты" required>
+                <input type="text" placeholder="Введите тему обращения" required>
+                <textarea cols="8" placeholder="Сообщение" required></textarea>
+                <button type="submit" class="hero-btn red-btn">Отправить сообщение</button>
+            </form>
+        </div>
+    </section>
+    
+ <!-- карта Яндекс.карты -->
+ <section class="location">
+  <div style="position:relative;overflow:hidden;"><a href=
+    "https://yandex.ru/maps/org/kolledzh_predprinimatelstva_11/1363537105/?utm_medium=mapframe&utm_source=maps" 
+    style="color:#eee;font-size:12px;position:absolute;top:0px;">Колледж предпринимательства № 11</a>
+    <a href="https://yandex.ru/maps/213/moscow/category/college/184106236/?utm_medium=mapframe&utm_source=maps" 
+    style="color:#eee;font-size:12px;position:absolute;top:14px;">Колледж в Москве</a>
+    <iframe src="https://yandex.ru/map-widget/v1/?ll=37.496201%2C55.818235&mode=search&oid=1363537105&ol=biz&z=16.61" width="700" 
+    height="600" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+</section>
+
+    <!-- подвал  -->
+    <section class="footer">
+      <h4>Контактная информация</h4>
+      
+      <div class="icons">
+        <i class="fa fa-brands fa-facebook"></i>
+        <i class=" fa fa-vk"></i>
+        <i class="fa fa-whatsapp"></i>
+      </div>
+      <p>
+        Москва <br> 2024
+      </p>
+    </section>
+
+    <script>
+      //для переключения меню
+      const navlinks = document.getElementById("nav-links");
+      function showMenu() {
+        navlinks.style.right = "0px";
+      }
+      function hideMenu() {
+        navlinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Образовательная Организация</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;700&display=swap"
+      rel="stylesheet"/>
+ 
+  </head>
+  <body>
+    <section class="sub-header">
+      <nav>
+        <a href="index.html"><img src="img/logo.png" alt="logo" /></a>
+        <div class="nav-links" id="nav-links">
+          <i class="fa fa-solid fa-xmark" onclick="hideMenu()"></i>
+          <ul>
+            
+            <li><a href="./about.html">О нас</a></li>
+            <li><a href="./course.html">Мероприятия и события</a></li>
+            <li><a href="./blog.html">Меню</a></li>
+            <li><a href="./contact.html">Контактная информация</a></li>
+           
+          </ul>
+        </div>
+        <i class="fa fa-solid fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <h1>О нас</h1>
+    </section>
+
+    <!-- Раздел О нас -->
+    <section class="about-us">
+      <div class="row">
+        <div class="about-col">
+          <h1> Добро пожаловать в нашу образовательную организацию!</h1>
+          <p>
+            Наша образовательная организация создает атмосферу для развития и обучения, где каждый может раскрыть свой потенциал.
+             Команда опытных преподавателей предлагает широкий спектр курсов и программ для различных областей.<br> 
+             Наша цель — сделать обучение доступным и увлекательным, вдохновляя студентов на успешное будущее! 
+          </p>
+          <a href="course.html" class="hero-btn red-btn" >Начать сейчас</a>
+        </div>
+        <div class="about-col">
+            <img src="./img/aboutus.jpg" alt="about">
+        </div>
+      </div>
+    </section>
+
+    <!-- Подвал  -->
+    <section class="footer">
+      <h4>О нас</h4>
+     
+      <div class="icons">
+        <i class="fa fa-brands fa-facebook"></i>
+        <i class=" fa fa-vk"></i>
+        <i class="fa fa-whatsapp"></i>
+      </div>
+      <p>
+        Москва <br> 2024
+      </p>
+    </section>
+
+    <script>
+      //for toggle menu
+      const navlinks = document.getElementById("nav-links");
+      function showMenu() {
+        navlinks.style.right = "0px";
+      }
+      function hideMenu() {
+        navlinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>

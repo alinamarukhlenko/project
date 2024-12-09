@@ -1,5 +1,6 @@
 <?php
 require_once('db.php');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login = $_POST['login'];
     $password = $_POST['password'];
@@ -12,16 +13,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($password != $repeatpassword) {
             echo "Пароли не совпадают";
         } else {
-            // Подготовленный запрос для безопасности
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $conn->prepare("INSERT INTO users (login, password, email) VALUES (?, ?, ?)");
-            $stmt->bind_param("sss", $login, $password, $email);
-            
+            $stmt->bind_param("sss", $login, $hashedPassword, $email);
+
             if ($stmt->execute() === TRUE) {
-                echo "Вы успешно зарегистрированы";
+                header("Location: about.html");
+                exit();
             } else {
                 echo "Ошибка: " . $stmt->error;
             }
-            
+
             $stmt->close();
         }
     }
