@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Образовательная Организация</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.course-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.course-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.course-card:hover .course-image {
+    transform: scale(1.05);
+}
+
+.course-content {
+    padding: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.course-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.course-card:hover .course-title {
+    color: #D7610E;
+}
+
+.course-description {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.6;
+    opacity: 0.9;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.course-card:hover .course-description {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+} 
+
+  </style>
+</head>
+<body>
+  <section class="sub-header">
+      <nav>
+          <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+          <div class="nav-links" id="nav-links">
+              <ul>
+                  <li><a href="./about.html">О нас</a></li>
+                  <li><a href="./course.html">Мероприятия и события</a></li>
+                  <li><a href="./courses.html">Курсы</a></li>
+                  <li><a href="./blog.html">Меню</a></li>
+                  <li><a href="./contact.html">Контактная информация</a></li>
+              </ul>
+          </div>
+      </nav>
+      <h1>Курсы Образовательной Организации</h1>
+  </section>
+
+  <div class="container">
+      <div class="courses-grid">
+          <div class="course-card">
+              <img src="img/ИнтелектуальныеСистемы.png" alt="ИИ и машинное обучение" class="course-image">
+              <div class="course-content">
+                  <h3 class="course-title">Интеллектуальные системы и технологии</h3>
+                  <p class="course-description">ИИ и машинное обучение для автоматизации процессов. Изучите основы искусственного интеллекта и его применение.</p>
+              </div>
+          </div>
+
+          <div class="course-card">
+              <img src="img/ИнновационныеТехн.png" alt="Инновационные технологии" class="course-image">
+              <div class="course-content">
+                  <h3 class="course-title">Инновационные технологии</h3>
+                  <p class="course-description">Передовые разработки, включая блокчейн и IoT. Освойте современные технологии будущего.</p>
+              </div>
+          </div>
+
+          <div class="course-card">
+              <img src="img/Сертификация.png" alt="Сертификация" class="course-image">
+              <div class="course-content">
+                  <h3 class="course-title">Сертификация информационных систем</h3>
+                  <p class="course-description">Проверка соответствия стандартам безопасности. Получите навыки в области информационной безопасности.</p>
+              </div>
+          </div>
+
+          <div class="course-card">
+              <img src="img/КомпСети.png" alt="Компьютерные сети" class="course-image">
+              <div class="course-content">
+                  <h3 class="course-title">Компьютерные сети</h3>
+                  <p class="course-description">Связь между устройствами для передачи данных. Изучите основы сетевых технологий.</p>
+              </div>
+          </div>
+
+          <div class="course-card">
+              <img src="img/Инженерно-техническая поддержка.png" alt="Инженерно-техническая поддержка" class="course-image">
+              <div class="course-content">
+                  <h3 class="course-title">Инженерно-техническая поддержка сопровождения ИС</h3>
+                  <p class="course-description">Обслуживание информационных систем для стабильной работы. Станьте специалистом по поддержке ИС.</p>
+              </div>
+          </div>
+
+          <div class="course-card">
+              <img src="img/ВнедрениеИС.png" alt="Внедрение ИС" class="course-image">
+              <div class="course-content">
+                  <h3 class="course-title">Внедрение информационных систем</h3>
+                  <p class="course-description">Интеграция ИС для повышения эффективности. Научитесь внедрять и оптимизировать информационные системы.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+      
+
+      <section class="footer">
+        <h4>Курсы</h4>
+        <div class="social-icons">
+            <a href="#" class="social-icon telegram">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="#" class="social-icon vk">
+                <i class="fab fa-vk"></i>
+            </a>
+            <a href="#" class="social-icon whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <p>
+            Москва <br> 2025
+        </p>
+    </section>

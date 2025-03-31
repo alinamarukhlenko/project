@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Календарь</title>
+    <link rel="stylesheet" href="calendar.stockholm.css">
+    <link rel="stylesheet" href="style.css" /> <!-- Подключаем необходимые стили -->
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            padding: 1rem 2rem;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000857; /* Цвет фона навигации */
+            color: white; /* Цвет текста навигации */
+        }
+        
+        nav img {
+            width: 150px; /* Логотип */
+        }
+
+        .nav-links {
+            flex: 1;
+            text-align: right;
+        }
+
+        .nav-links ul {
+            list-style-type: none; /* Убираем маркеры списка */
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links ul li {
+            display: inline-block; /* Размещаем элементы в строку */
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        .nav-links ul li:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Эффект при наведении */
+        }
+
+        .nav-links ul li a {
+            color: white; /* Цвет ссылок */
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+
+        #app {
+            width: 100%; /* Установите ширину на 100% контейнера */
+            height: 900px; /* Увеличьте высоту календаря */
+            border: 1px solid #ccc; /* Добавьте рамку для лучшей видимости */
+            margin-top: 20px; /* Отступ между меню и календарем */
+        }
+
+        .calendar-container {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#"><img src="img/logo.png" alt="logo" /></a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="./about.html">О нас</a></li>
+                <li><a href="./course.html">Мероприятия и события</a></li>
+                <li><a href="./courses.html">Курсы</a></li>
+                <li><a href="./calendar.html">Календарь</a></li>
+                <li><a href="./blog.html">Меню</a></li>
+                <li><a href="./contact.html">Контактная информация</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div id="app"></div>
+    
+    <script type="module" src="main.js"></script>
+</body>
+</html>

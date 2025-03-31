@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,74 +9,286 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
     <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+        }
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;700&display=swap"
-      rel="stylesheet"/>
- 
-  </head>
-  <body>
+        .todo-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px 0 20px 20px; /* Сдвиг влево */
+            padding: 20px;
+            border: 1px solid #d7610e;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .todo-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .todo__caption {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-control {
+            width: calc(100% - 20px);
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #d7610e;
+            outline: none;
+        }
+
+        .time-input {
+            width: calc(50% - 10px);
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .time-input:last-child {
+            margin-right: 0;
+        }
+
+        .tdlDiv {
+            margin-top: 20px;
+        }
+
+        .List {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .tdItem {
+            text-align: left;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 8px 0;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .tdItem:hover {
+            background-color: #fff;
+            transform: scale(1.02);
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tdItem:active {
+            transform: scale(0.98);
+        }
+
+        .tdItem.completed {
+            text-decoration: line-through;
+            color: #888;
+            background-color: #e0e0e0;
+        }
+
+        .add-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #d7610e;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-button:hover {
+            background-color: #b5530d;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 40px;
+        }
+
+        .footer h4 {
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            margin-bottom: 10px;
+        }
+
+        .social-icon {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #d7610e;
+        }
+    </style>
+</head>
+
+<body>
     <section class="sub-header">
-      <nav>
-        <a href="index.html"><img src="img/logo.png" alt="logo" /></a>
-        <div class="nav-links" id="nav-links">
-          <i class="fa fa-solid fa-xmark" onclick="hideMenu()"></i>
-          <ul>
-            
-            <li><a href="./about.html">О нас</a></li>
-            <li><a href="./course.html">Мероприятия и события</a></li>
-            <li><a href="./blog.html">Меню</a></li>
-            <li><a href="./contact.html">Контактная информация</a></li>
-           
-          </ul>
-        </div>
-        <i class="fa fa-solid fa-bars" onclick="showMenu()"></i>
-      </nav>
-      <h1>О нас</h1>
+        <nav>
+            <a href="index.html"><img src="img/logo.png" alt="logo" /></a>
+            <div class="nav-links" id="nav-links">
+                <i class="fa fa-solid fa-xmark" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="./about.html">О нас</a></li>
+                    <li><a href="./course.html">Мероприятия и события</a></li>
+                    <li><a href="./courses.html">Курсы</a></li>
+                    <li><a href="./calendar.html">Календарь</a></li>
+                    <li><a href="./blog.html">Меню</a></li>
+                    <li><a href="./contact.html">Контактная информация</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-solid fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>О нас</h1>
     </section>
 
     <!-- Раздел О нас -->
     <section class="about-us">
-      <div class="row">
-        <div class="about-col">
-          <h1> Добро пожаловать в нашу образовательную организацию!</h1>
-          <p>
-            Наша образовательная организация создает атмосферу для развития и обучения, где каждый может раскрыть свой потенциал.
-             Команда опытных преподавателей предлагает широкий спектр курсов и программ для различных областей.<br> 
-             Наша цель — сделать обучение доступным и увлекательным, вдохновляя студентов на успешное будущее! 
-          </p>
-          <a href="course.html" class="hero-btn red-btn" >Начать сейчас</a>
+        <div class="row">
+            <div class="about-col">
+                <h1> Добро пожаловать в нашу образовательную организацию!</h1>
+                <p>
+                    Наша образовательная организация создает атмосферу для развития и обучения, где каждый может раскрыть свой потенциал.
+                    Команда опытных преподавателей предлагает широкий спектр курсов и программ для различных областей.
+                    Наша цель — сделать обучение доступным и увлекательным, вдохновляя студентов на успешное будущее!
+                </p>
+                <a href="course.html" class="hero-btn red-btn">Начать сейчас</a>
+            </div>
+            <div class="about-col">
+                <img src="./img/student.png" alt="about">
+            </div>
         </div>
-        <div class="about-col">
-            <img src="./img/aboutus.jpg" alt="about">
+
+        <!-- Ту Ду лист -->
+        <div class="todo-container">
+            <h2 class="todo__caption">Расписание</h2>
+            <div id="tdlApp">
+                <input type="text" class="form-control task-input" placeholder="Добавьте занятие, мероприятие или встречу">
+                <div class="time-inputs">
+                    <input type="time" class="form-control time-input" placeholder="Время начала">
+                    <input type="time" class="form-control time-input" placeholder="Время окончания">
+                </div>
+                <button class="add-button" onclick="addTask()">Добавить</button>
+                <div class="tdlDiv">
+                    <ul class="List list-unstyled">
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Подвал  -->
     <section class="footer">
-      <h4>О нас</h4>
-     
-      <div class="icons">
-        <i class="fa fa-brands fa-facebook"></i>
-        <i class=" fa fa-vk"></i>
-        <i class="fa fa-whatsapp"></i>
-      </div>
-      <p>
-        Москва <br> 2024
-      </p>
+        <h4>О нас</h4>
+        <div class="social-icons">
+            <a href="#" class="social-icon telegram">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="#" class="social-icon vk">
+                <i class="fab fa-vk"></i>
+            </a>
+            <a href="#" class="social-icon whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <p>
+            Москва <br> 2025
+        </p>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
-      //for toggle menu
-      const navlinks = document.getElementById("nav-links");
-      function showMenu() {
-        navlinks.style.right = "0px";
-      }
-      function hideMenu() {
-        navlinks.style.right = "-200px";
-      }
+        // Заводим переменные под наши задачи
+        var List = $('#tdlApp ul');
+        var Mask = 'tdl_';
+
+        // Функция, которая берёт из памяти наши задачи и делает из них список
+        function showTasks() {
+            var Storage_size = localStorage.length;
+            if (Storage_size > 0) {
+                for (var i = 0; i < Storage_size; i++) {
+                    var key = localStorage.key(i);
+                    if (key.indexOf(Mask) == 0) {
+                        $('<li></li>').addClass('tdItem')
+                            .attr('data-itemid', key)
+                            .text(localStorage.getItem(key))
+                            .appendTo(List);
+                    }
+                }
+            }
+        }
+
+        showTasks();
+
+        function addTask() {
+            var task = $('.task-input').val();
+            var startTime = $('.time-input').eq(0).val(); // Время начала
+            var endTime = $('.time-input').eq(1).val(); // Время окончания
+            $('.task-input').val("");
+            $('.time-input').val(""); // Очищаем поля времени
+
+            if (task.length > 0) {
+                var number_Id = 0;
+                List.children().each(function (index, el) {
+                    var element_Id = $(el).attr('data-itemid').slice(4);
+                    if (element_Id > number_Id)
+                        number_Id = element_Id;
+                });
+                number_Id++;
+
+                var taskDetails = task + " (с " + startTime + " до " + endTime + ")"; // Формируем текст задачи
+                localStorage.setItem(Mask + number_Id, taskDetails);
+                $('<li></li>').addClass('tdItem')
+                    .attr('data-itemid', Mask + number_Id)
+                    .text(taskDetails).appendTo(List);
+            }
+        }
+
+        $(document).on('click', '.tdItem', function (e) {
+            var jet = $(e.target);
+            localStorage.removeItem(jet.attr('data-itemid'));
+            jet.remove();
+        });
+
+        //for toggle menu
+        const navlinks = document.getElementById("nav-links");
+        function showMenu() {
+            navlinks.style.right = "0px";
+        }
+
+        function hideMenu() {
+            navlinks.style.right = "-200px";
+        }
     </script>
-  </body>
+</body>
+
 </html>
